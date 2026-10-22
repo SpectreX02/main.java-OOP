@@ -1,27 +1,21 @@
-# main.java-OOP
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        // Create two car objects using different constructors
         Car car1 = new Car();
         Car car2 = new Car("Honda", "Civic", "Black",
                 2023, 95000.00, 0, false);
 
         System.out.println("=== Car Management System ===");
 
-        // Display details of both cars
         System.out.println("\nCar 1 Details:");
         displayCar(car1);
 
         System.out.println("\nCar 2 Details:");
         displayCar(car2);
 
-        // Let the user choose a car
         System.out.println("\nChoose a car:");
         System.out.println("1. Toyota Vios");
         System.out.println("2. Honda Civic");
@@ -48,7 +42,6 @@ public class Main {
 
         int choice;
 
-        // Keep showing the menu until the user exits
         do {
             System.out.println("\n=== Menu ===");
             System.out.println("1. Show car details");
@@ -79,7 +72,6 @@ public class Main {
                     break;
 
                 case 5:
-                    // Use a for loop to accelerate three times
                     for (int i = 1; i <= 3; i++) {
                         System.out.println("Acceleration " + i);
                         selectedCar.accelerate();
@@ -87,7 +79,6 @@ public class Main {
                     break;
 
                 case 6:
-                    // Change the car colour and price using setters
                     input.nextLine();
 
                     System.out.print("Enter new colour: ");
@@ -123,7 +114,6 @@ public class Main {
         input.close();
     }
 
-    // Display the car information using getter methods
     public static void displayCar(Car car) {
 
         System.out.println("Brand: " + car.getBrand());
@@ -133,7 +123,6 @@ public class Main {
         System.out.printf("Price: RM%.2f%n", car.getPrice());
         System.out.println("Speed: " + car.getSpeed() + " km/h");
 
-        // Check whether the engine is running
         if (car.getEngineStatus()) {
             System.out.println("Engine: Running");
         } else {
